@@ -7,11 +7,16 @@ function add(nums) {
 function subtr(num) {
   return num[0] - num[1];
 }
+function lastOperation(operation) {
+  if (operation == "+") {
+    return add(arr);
+  }
+}
 
 let num = "";
 let arr = [];
+let lastOp = "";
 window.addEventListener("keyup", (e) => {
-  console.log(e);
   switch (e.key) {
     case "Backspace":
       num = num.substr(0, num.length - 1);
@@ -25,13 +30,17 @@ window.addEventListener("keyup", (e) => {
       break;
     case "=":
       arr.push(parseInt(num));
-      display.textContent = add(arr);
-      num = add(arr);
+      display.textContent = lastOperation(lastOp);
+      num = lastOperation(lastOp);
+      arr = [];
+      arr.push(num);
+      num = "0";
       break;
     case "+":
       arr.push(parseInt(num));
       num = "";
-      display.textContent = "+ ";
+      display.textContent = "";
+      lastOp = "+";
       break;
     case "0":
       display.textContent = num += "0";
