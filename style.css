@@ -1,7 +1,7 @@
 .calculator {
   display: flex;
   flex-direction: column;
-  height: 512px;
+  height: 515px;
   width: 360px;
   background-color: silver;
   margin: 30px auto auto auto;
@@ -11,16 +11,18 @@
   border: 2px solid rgba(0, 0, 0, 0.5);
 }
 .display {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 0px 10px;
   font-size: 30px;
   width: 90%;
   height: 60px;
-  background-color: white;
+  background: linear-gradient(0deg, rgba(0, 128, 0, 0.3), rgba(0, 128, 0, 0.3));
   margin: 8px auto 20px auto;
   border-radius: 3px;
   border: 2px solid rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .clearDel {
   display: grid;
